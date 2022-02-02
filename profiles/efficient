@@ -1,0 +1,47 @@
+
+# Kernel
+echo "0" > /proc/sys/kernel/sched_child_runs_first
+echo "1" > /proc/sys/kernel/timer_migration
+echo "15" > /proc/sys/kernel/perf_cpu_time_max_percent
+echo "2500000" > /proc/sys/kernel/sched_min_granularity_ns
+echo "1000000" > /proc/sys/kernel/sched_migration_cost_ns
+
+# VM
+echo "10" > /proc/sys/vm/stat_interval
+
+# Stuneboost
+echo "5" > /dev/stune/top-app/schedtune.boost
+echo "1" > /dev/stune/foreground/schedtune.boost
+echo "1" > /dev/stune/top-app/schedtune.prefer_idle
+
+# GPU
+if [ -e /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost ]; then
+echo "1" > /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+fi
+
+echo "0" > /sys/class/kgsl/kgsl-3d0/throttling
+echo "1" > /sys/class/kgsl/kgsl-3d0/force_clk_on
+echo "1" > /sys/class/kgsl/kgsl-3d0/force_bus_on
+echo "1" > /sys/class/kgsl/kgsl-3d0/force_rail_on
+echo "1" > /sys/class/kgsl/kgsl-3d0/force_no_nap
+echo "0" > /sys/class/kgsl/kgsl-3d0/bus_split
+
+# Schedutil Bess
+if [ -d /sys/devices/system/cpu/cpu0/cpufreq/schedutil ]; then
+
+chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/schedutil/*
+chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/schedutil/*
+
+echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+
+echo "20000" > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+echo "20000" > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
+
+echo "1" > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable
+echo "0" > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable
+
+echo "500" > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+echo "500" > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
+
+fi

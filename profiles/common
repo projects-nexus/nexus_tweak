@@ -1,0 +1,17 @@
+
+# Kernel
+echo "0" > /proc/sys/kernel/sched_boost
+echo "0" > /proc/sys/kernel/panic
+echo "0" > /proc/sys/kernel/panic_on_oops
+echo "0 0 0 0" > /proc/sys/kernel/printk
+echo "0" > /proc/sys/kernel/sched_tunable_scaling
+echo "0" > /proc/sys/kernel/compat-log
+
+# VM 
+echo "0" > /proc/sys/vm/oom_kill_allocating_task
+echo "0" > /proc/sys/vm/page-cluster
+
+# cpuset
+echo "0-3" > /dev/cpuset/audio-app/cpus
+echo "0-3,6-7" > /dev/cpuset/foreground/cpus
+echo "0-1" > /dev/cpuset/background/cpus
