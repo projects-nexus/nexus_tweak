@@ -6,6 +6,7 @@ echo "0" > /proc/sys/kernel/panic_on_oops
 echo "0 0 0 0" > /proc/sys/kernel/printk
 echo "0" > /proc/sys/kernel/sched_tunable_scaling
 echo "0" > /proc/sys/kernel/compat-log
+echo "0" > /proc/sys/kernel/sched_cfs_boost
 
 # VM 
 echo "0" > /proc/sys/vm/oom_kill_allocating_task
