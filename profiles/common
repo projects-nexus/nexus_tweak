@@ -29,3 +29,41 @@ nex /dev/cpuset/background/cpus "0-1"
 
 # disable adreno idler
 nex /sys/module/adreno_idler/parameters/adreno_idler_active 0
+
+# Disabled Exception-trace
+nex /proc/sys/debug/exception-trace 0
+
+# Disable some kernel debugging
+for i in /sys/module/*/parameters/debug_mask
+do 
+echo 0 > $i
+done
+
+for i in /sys/module/*/parameters/debug_level 
+do 
+echo 0 > $i
+done
+
+# Disable some more debugging
+nex /sys/module/debug/parameters/enable_event_log 0
+nex /sys/module/usb_bam/parameters/enable_event_log 0
+nex /sys/module/printk/parameters/console_suspend Y
+nex /sys/module/printk/parameters/ignore_loglevel Y
+nex /sys/module/printk/parameters/time N
+nex /sys/module/bluetooth/parameters/disable_ertm Y
+nex /sys/module/bluetooth/parameters/disable_esco Y
+nex /sys/module/hid_apple/parameters/fnmode 0
+nex /sys/module/ip6_tunnel/parameters/log_ecn_error N
+nex /sys/module/sit/parameters/log_ecn_error N
+nex /sys/module/hid/parameters/ignore_special_drivers 0
+nex /sys/module/hid_magicmouse/parameters/emulate_3button N
+nex /sys/module/hid_magicmouse/parameters/emulate_scroll_wheel N
+nex /sys/module/hid_magicmouse/parameters/scroll_speed 0
+nex /sys/module/service_locator/parameters/enable 0
+nex /sys/module/subsystem_restart/parameters/disable_restart_work 1
+nex /sys/module/rmnet_data/parameters/rmnet_data_log_level 0
+nex /sys/module/diagchar/parameters/diag_mask_clear_param 0
+nex /sys/module/hid/parameters/ignore_special_drivers 1
+nex /sys/module/icnss/parameters/dynamic_feature_mask 0
+nex /sys/module/ppp_generic/parameters/mp_protocol_compress 0
+
