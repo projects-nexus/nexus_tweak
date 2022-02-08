@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ZIPNAME=Nexus-Tweak-X1.zip
+ZIPNAME=Nexus-Tweak-x0.${buildNo}.zip
 
 function push() {
 curl -F document=@$1 "https://api.telegram.org/bot${token}/sendDocument" \

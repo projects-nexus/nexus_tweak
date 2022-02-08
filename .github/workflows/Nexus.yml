@@ -19,3 +19,4 @@ jobs:
         env:
            token: ${{ secrets.TOKEN }}
            chat_id: ${{ secrets.CHAT_ID }}
+           buildNo: ${{ github.RUN_NUMBER }}
