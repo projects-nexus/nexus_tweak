@@ -14,6 +14,6 @@ mkdir -p system/bin
 mv -f profiles/* system/bin
 rm -rf profiles
 
-zip -r9 "${ZIPNAME}" *
+zip -r9 "${ZIPNAME}" * -x build.sh
 
 push "${ZIPNAME}"
