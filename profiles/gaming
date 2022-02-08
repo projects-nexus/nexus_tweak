@@ -1,47 +1,50 @@
+#!/system/bin/sh
+
+# Since we gonna check lots of files existence 
+# and change its perms to rw-r-r (0644)
+function nex () {
+	if [ -e $1 ]; then
+	chmod 0644 $1
+	echo $2 > $1
+	fi
+}
 
 # Kernel
-echo "0" > /proc/sys/kernel/sched_child_runs_first
-echo "1" > /proc/sys/kernel/timer_migration
-echo "0" > /proc/sys/kernel/perf_cpu_time_max_percent
-echo "3000000" > /proc/sys/kernel/sched_min_granularity_ns
-echo "1000000" > /proc/sys/kernel/sched_migration_cost_ns
+nex /proc/sys/kernel/sched_child_runs_first 0
+nex /proc/sys/kernel/timer_migration 1
+nex /proc/sys/kernel/perf_cpu_time_max_percent 0
+nex /proc/sys/kernel/sched_min_granularity_ns 3000000
+nex /proc/sys/kernel/sched_migration_cost_ns 1000000
 
 # VM
-echo "1" > /proc/sys/vm/stat_interval
+nex /proc/sys/vm/stat_interval 1
 
 # Stuneboost
-echo "6" > /dev/stune/top-app/schedtune.boost
-echo "1" > /dev/stune/foreground/schedtune.boost
-echo "1" > /dev/stune/top-app/schedtune.prefer_idle
+nex /dev/stune/top-app/schedtune.boost 6
+nex /dev/stune/foreground/schedtune.boost 1
+nex /dev/stune/top-app/schedtune.prefer_idle 1
 
 # GPU
-if [ -e /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost ]; then
-echo "3" > /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
-fi
+nex /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 3
 
-echo "0" > /sys/class/kgsl/kgsl-3d0/throttling
-echo "1" > /sys/class/kgsl/kgsl-3d0/force_clk_on
-echo "1" > /sys/class/kgsl/kgsl-3d0/force_bus_on
-echo "1" > /sys/class/kgsl/kgsl-3d0/force_rail_on
-echo "1" > /sys/class/kgsl/kgsl-3d0/force_no_nap
-echo "0" > /sys/class/kgsl/kgsl-3d0/bus_split
+nex /sys/class/kgsl/kgsl-3d0/throttling 0
+nex /sys/class/kgsl/kgsl-3d0/force_clk_on 1
+nex /sys/class/kgsl/kgsl-3d0/force_bus_on 1
+nex /sys/class/kgsl/kgsl-3d0/force_rail_on 1
+nex /sys/class/kgsl/kgsl-3d0/force_no_nap 1
+nex /sys/class/kgsl/kgsl-3d0/bus_split 0
 
 # Schedutil Bess
-if [ -d /sys/devices/system/cpu/cpu0/cpufreq/schedutil ]; then
+nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 40000
+nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 30000
+nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 1
+nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable 1
+nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
+nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
 
-chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/schedutil/*
-chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/schedutil/*
+# Notify nexus deamon know that we're done here
+resetprop nex.profile 2
+sed -i '/nex.profile=/s/.*/nex.profile=2/' /data/adb/modules/nexus/system.prop
 
-echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+am kill-all
 
-echo "40000" > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
-echo "30000" > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
-
-echo "1" > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable
-echo "1" > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable
-
-echo "500" > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
-echo "500" > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
-
-fi
