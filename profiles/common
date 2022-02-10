@@ -36,6 +36,10 @@ nex /sys/module/cpu_boost/parameters/input_boost_ms 0
 # cpu input boost
 nex /sys/module/cpu_input_boost/parameters/wake_boost_duration 256
 
+# touch boost
+nex /sys/power/pnpmgr/touch_boost 0
+nex /sys/module/msm_performance/parameters/touchboost 0
+
 # Disabled Exception-trace
 nex /proc/sys/debug/exception-trace 0
 
