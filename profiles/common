@@ -78,3 +78,6 @@ nex /sys/module/hid/parameters/ignore_special_drivers 1
 nex /sys/module/icnss/parameters/dynamic_feature_mask 0
 nex /sys/module/ppp_generic/parameters/mp_protocol_compress 0
 
+# TCP
+nex /proc/sys/net/ipv4/tcp_ecn 1
+
