@@ -18,6 +18,8 @@ nex /proc/sys/kernel/sched_migration_cost_ns 500000
 
 # VM
 nex /proc/sys/vm/stat_interval 60
+nex /proc/sys/vm/vfs_cache_pressure 24
+nex /proc/sys/vm/swappiness 60
 
 # Stuneboost
 nex /dev/stune/top-app/schedtune.boost 1
