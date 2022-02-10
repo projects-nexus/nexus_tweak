@@ -15,6 +15,7 @@ nex /proc/sys/kernel/timer_migration 1
 nex /proc/sys/kernel/perf_cpu_time_max_percent 90
 nex /proc/sys/kernel/sched_min_granularity_ns 1250000
 nex /proc/sys/kernel/sched_migration_cost_ns 500000
+nex /proc/sys/kernel/sched_nr_migrate 32
 
 # VM
 nex /proc/sys/vm/stat_interval 60
