@@ -33,6 +33,9 @@ nex /sys/module/adreno_idler/parameters/adreno_idler_active 0
 # disable cpu boost
 nex /sys/module/cpu_boost/parameters/input_boost_ms 0
 
+# cpu input boost
+nex /sys/module/cpu_input_boost/parameters/wake_boost_duration 256
+
 # Disabled Exception-trace
 nex /proc/sys/debug/exception-trace 0
 

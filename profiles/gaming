@@ -24,6 +24,9 @@ nex /dev/stune/top-app/schedtune.boost 6
 nex /dev/stune/foreground/schedtune.boost 1
 nex /dev/stune/top-app/schedtune.prefer_idle 1
 
+# CPU
+nex /sys/module/cpu_input_boost/parameters/input_boost_duration 128
+
 # GPU
 nex /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 3
 
