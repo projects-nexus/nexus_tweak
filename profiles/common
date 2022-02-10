@@ -22,6 +22,7 @@ nex /proc/sys/kernel/sched_cfs_boost 0
 nex /proc/sys/vm/oom_kill_allocating_task 0
 nex /proc/sys/vm/page-cluster 0
 nex /proc/sys/vm/extfrag_threshold 750
+nex /proc/sys/vm/compact_unevictable_allowed 0
 
 # cpuset
 nex /dev/cpuset/audio-app/cpus "0-3"
