@@ -81,4 +81,5 @@ nex /sys/module/ppp_generic/parameters/mp_protocol_compress 0
 # TCP
 nex /proc/sys/net/ipv4/tcp_ecn 1
 nex /proc/sys/net/ipv4/tcp_fastopen 3
+nex /proc/sys/net/ipv4/tcp_timestamps 0
 
