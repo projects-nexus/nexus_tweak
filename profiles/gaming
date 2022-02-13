@@ -17,6 +17,9 @@ nex /proc/sys/kernel/sched_min_granularity_ns 3000000
 nex /proc/sys/kernel/sched_migration_cost_ns 1000000
 nex /proc/sys/kernel/sched_nr_migrate 128
 
+# Fs
+nex /proc/sys/fs/lease-break-time 5
+
 # VM
 nex /proc/sys/vm/stat_interval 1
 nex /proc/sys/vm/vfs_cache_pressure 75
