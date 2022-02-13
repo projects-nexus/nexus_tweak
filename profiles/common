@@ -88,5 +88,8 @@ nex /proc/sys/net/ipv4/tcp_timestamps 0
 for queue in /sys/block/*/queue
 do
 echo 128 > "${queue}"/read_ahead_kb
+echo 0 > "${queue}"/add_random
+echo 0 > "${queue}"/iostats
+echo 0 > "${queue}"/rotational
 done
 
