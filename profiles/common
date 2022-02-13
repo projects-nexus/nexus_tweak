@@ -84,3 +84,9 @@ nex /proc/sys/net/ipv4/tcp_ecn 1
 nex /proc/sys/net/ipv4/tcp_fastopen 3
 nex /proc/sys/net/ipv4/tcp_timestamps 0
 
+#
+for queue in /sys/block/*/queue
+do
+echo 128 > "${queue}"/read_ahead_kb
+done
+
