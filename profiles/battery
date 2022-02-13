@@ -60,6 +60,7 @@ nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
 # block
 for queue in /sys/block/*/queue
 do
+echo 128 > "${queue}"/nr_requests
 echo 0 > "${queue}"/rq_affinity
 echo 0 > "${queue}"/nomerges
 done
