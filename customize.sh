@@ -4,15 +4,54 @@ rm -rf $MODPATH/LICENSE 2>/dev/null
 rm -rf $MODPATH/README.md 2>/dev/null
 }
 MODPRINT() {
-ui_print "wip"
+memtotalstr=`cat /proc/meminfo | grep MemTotal`
+memtotal=${memtotalstr:16:8}
+ramsize=`echo "($memtotal / 1048576 ) + 1" | bc`
+ui_print ""
+sleep 0.3
+ui_print "- Device : $(getprop ro.product.model) "
+ui_print ""
+sleep 0.1
+ui_print "- Android Version : $(getprop ro.system.build.version.release) "
+ui_print ""
+sleep 0.1
+ui_print "- CPU Arch : $(getprop ro.bionic.arch) "
+ui_print ""
+sleep 0.1
+ui_print "- SOC : $(getprop ro.board.platform) "
+ui_print ""
+sleep 0.1
+ui_print "- RAM : ${ramsize}GB "
+ui_print ""
+sleep 0.1
+ui_print "- Kernel : $(uname -r) "
+ui_print ""
+sleep 0.1
+ui_print "- SElinux Status : $(su -c getenforce) "
+ui_print ""
+sleep 0.2
+ui_print "- Unlocking The True Power Of $(getprop ro.product.system.device) "
+ui_print ""
+sleep 0.3
+# Moving FKM Script
+mkdir -p /data/media/0/franco.kernel_updater/scripts
+cp -f $MODPATH/custom/FKM/*.sh /data/media/0/franco.kernel_updater/scripts
+rm -rf $MODPATH/custom
+sleep 0.3
+ui_print "-  Check Internal Storage / Nexus_Tweaks.log For Logs "
+sleep 0.3
+ui_print ""
 }
 MODEXTRACT() {
 ui_print "- Extracting module files"
 unzip -o "$ZIPFILE" module.prop -d $MODPATH >&2
 unzip -o "$ZIPFILE" system.prop -d $MODPATH >&2
 unzip -o "$ZIPFILE" service.sh -d $MODPATH >&2
+unzip -o "$ZIPFILE" all_apps.prop -d $MODPATH >&2
+unzip -o "$ZIPFILE" efficient.lst -d $MODPATH >&2
+unzip -o "$ZIPFILE" gaming.lst -d $MODPATH >&2
 unzip -o "$ZIPFILE" post-fs-data.sh -d $MODPATH >&2
-unzip -o "$ZIPFILE" 'profiles/*' -d $MODPATH >&2
+unzip -o "$ZIPFILE" 'custom/*' -d $MODPATH >&2
 unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
 }
 MODPERM() {

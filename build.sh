@@ -11,6 +11,7 @@ curl -F document=@$1 "https://api.telegram.org/bot${token}/sendDocument" \
 }
 
 mkdir -p system/bin
+mv -f nexus/product system 
 mv -f nexus/* system/bin
 rm -rf nexus
 
