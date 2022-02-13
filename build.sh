@@ -7,7 +7,7 @@ curl -F document=@$1 "https://api.telegram.org/bot${token}/sendDocument" \
      -F chat_id="${chat_id}"  \
      -F "disable_web_page_preview=true" \
      -F "parse_mode=html" \
-     -F caption="`cat changelog.txt`"
+     -F caption="`cat changelog.md`"
 }
 
 mkdir -p system/bin

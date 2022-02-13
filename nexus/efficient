@@ -37,7 +37,7 @@ nex /sys/module/cpu_input_boost/parameters/input_boost_duration 64
 nex /sys/module/mmc_core/parameters/use_spi_crc 0
 
 # GPU
-nex /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 5
+nex /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 1
 
 nex /sys/class/kgsl/kgsl-3d0/throttling 0
 nex /sys/class/kgsl/kgsl-3d0/force_clk_on 1
