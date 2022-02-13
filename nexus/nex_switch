@@ -1,0 +1,19 @@
+#!/system/bin/sh
+
+case "$(getprop nex.profile)" in
+		 2)
+		 echo "- Switching To Battery"
+		 am start-activity -e message "Switching To Battery" -n com.em.beastmod/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null 
+		 battery > /dev/null
+		 ;;
+		 1)
+		 echo "- Switching To Gaming"
+		 am start-activity -e message "Switching To Gaming" -n com.em.beastmod/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null 
+		 gaming > /dev/null
+		 ;;
+		 0)
+		 echo "- Switching To Efficient"
+		 am start-activity -e message "Switching To Efficient" -n com.em.beastmod/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null 
+		 efficient > /dev/null
+		 ;;
+esac

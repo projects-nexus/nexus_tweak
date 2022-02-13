@@ -1,0 +1,20 @@
+#!/system/bin/sh
+
+case "$(getprop nex.lock)" in
+		 1)
+		 resetprop nex.lock 0
+		 sed -i '/nex.lock=/s/.*/nex.lock=0/' /data/adb/modules/nexus/system.prop
+		 am start-activity -e message "Lock Disabled" -n com.em.beastmod/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null
+		 echo " " >> /storage/emulated/0/Nexus_Tweaks.log
+		 echo "Lock Disabled On $(date +"%d-%m") At $(date +"%r") " >> /storage/emulated/0/Nexus_Tweaks.log
+		 echo "Lock Disabled"
+		 ;;
+		 0)
+		 resetprop nex.lock 1
+		 sed -i '/nex.lock=/s/.*/nex.lock=1/' /data/adb/modules/nexus/system.prop
+		 am start-activity -e message "Profile Locked" -n com.em.beastmod/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null
+		 echo " " >> /storage/emulated/0/Nexus_Tweaks.log
+		 echo "Profile Locked On $(date +"%d-%m") At $(date +"%r") " >> /storage/emulated/0/Nexus_Tweaks.log
+		 echo "Profile Locked"
+		 ;;
+esac

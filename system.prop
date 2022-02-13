@@ -1,1 +1,48 @@
-#wip
+# Nexus reserved
+nex.lock=0
+nex.toast=0
+nex.profile=0
+
+# Disable vsync
+debug.cpurend.vsync=false
+hwui.disable_vsync=true
+
+# Display Graphics
+debug.sf.disable_backpressure=1
+vendor.gralloc.enable_fb_ubwc=1
+debug.hwui.renderer=skiagl
+debug.egl.hw=0
+debug.sf.hw=0
+vendor.display.disable_rotator_downscale=1
+
+# Misc
+ro.sf.compbypass.enable=0 
+debug.sf.recomputecrop=0
+debug.hwui.use_buffer_age=false
+debug.atrace.tags.enableflags=0
+ro.config.nocheckin=1
+ro.kernel.checkjni=0
+ro.kernel.android.checkjni=0
+profiler.hung.dumpdobugreport=false
+profiler.force_disable_ulog=1
+profiler.force_disable_err_rpt=1
+persist.service.lgospd.enable=0
+persist.service.pcsync.enable=0
+persist.sys.purgeable_assets=1
+ro.vendor.qti.sys.fw.bservice_enable=true
+arm64.memtag.process.system_server=off
+
+# Disable App launch blur on A12
+ro.launcher.blur.appLaunch=0
+
+# IORap
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
+
+# dalvik 
+dalvik.vm.dex2oat64.enabled=true
+ro.sys.fw.dex2oat_thread_count=8
+

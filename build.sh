@@ -11,8 +11,8 @@ curl -F document=@$1 "https://api.telegram.org/bot${token}/sendDocument" \
 }
 
 mkdir -p system/bin
-mv -f profiles/* system/bin
-rm -rf profiles
+mv -f nexus/* system/bin
+rm -rf nexus
 
 zip -r9 "${ZIPNAME}" * -x build.sh
 
