@@ -57,6 +57,13 @@ nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable 1
 nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
 nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
 
+# Block
+for queue in /sys/block/*/queue
+do
+echo 2 > "${queue}"/rq_affinity
+echo 2 > "${queue}"/nomerges
+done
+
 # Notify nexus deamon know that we're done here
 resetprop nex.profile 2
 sed -i '/nex.profile=/s/.*/nex.profile=2/' /data/adb/modules/nexus/system.prop
