@@ -1,12 +1,12 @@
 #!/system/bin/sh
+# NeXus Tweaks
 
-# Since we gonna check lots of files existence 
-# and change its perms to rw-r-r (0644)
-function nex () {
-	if [ -e $1 ]; then
-	chmod 0644 $1
-	echo $2 > $1
-	fi
+# $1:filepath $2:value
+nex() {
+  [ -e "$1" ] && {
+    chmod 0644 $1
+    echo $2 > $1
+  }
 }
 
 # Kernel
@@ -46,14 +46,12 @@ nex /sys/module/msm_performance/parameters/touchboost 0
 nex /proc/sys/debug/exception-trace 0
 
 # Disable some kernel debugging
-for i in /sys/module/*/parameters/debug_mask
-do 
-echo 0 > $i
+for i in /sys/module/*/parameters/debug_mask; do
+  nex "$i" 0
 done
 
-for i in /sys/module/*/parameters/debug_level 
-do 
-echo 0 > $i
+for i in /sys/module/*/parameters/debug_level; do 
+  nex "$i" 0
 done
 
 # Disable some more debugging
@@ -84,12 +82,11 @@ nex /proc/sys/net/ipv4/tcp_ecn 1
 nex /proc/sys/net/ipv4/tcp_fastopen 3
 nex /proc/sys/net/ipv4/tcp_timestamps 0
 
-#
-for queue in /sys/block/*/queue
-do
-echo 128 > "${queue}"/read_ahead_kb
-echo 0 > "${queue}"/add_random
-echo 0 > "${queue}"/iostats
-echo 0 > "${queue}"/rotational
-done
 
+# I/O Blocks
+for queue in /sys/block/*/queue/; do
+  nex "${queue}read_ahead_kb" 128
+  nex "${queue}add_random" 0
+  nex "${queue}iostats" 0
+  nex "${queue}rotational" 0  
+done

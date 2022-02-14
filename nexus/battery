@@ -1,12 +1,12 @@
 #!/system/bin/sh
+# NeXus Tweaks
 
-# Since we gonna check lots of files existence 
-# and change its perms to rw-r-r (0644)
-function nex () {
-	if [ -e $1 ]; then
-	chmod 0644 $1
-	echo $2 > $1
-	fi
+# $1:filepath $2:value
+nex() {
+  [ -e "$1" ] && {
+    chmod 0644 $1
+    echo $2 > $1
+  }
 }
 
 # Kernel
@@ -29,6 +29,9 @@ nex /proc/sys/vm/swappiness 60
 nex /dev/stune/top-app/schedtune.boost 1
 nex /dev/stune/foreground/schedtune.boost 0
 nex /dev/stune/top-app/schedtune.prefer_idle 0
+
+# EAS
+nex /proc/sys/kernel/sched_energy_aware 1
 
 # CPU
 nex /sys/module/cpu_input_boost/parameters/input_boost_duration 0
@@ -57,12 +60,11 @@ nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable 0
 nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
 nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us 500
 
-# block
-for queue in /sys/block/*/queue
-do
-echo 128 > "${queue}"/nr_requests
-echo 0 > "${queue}"/rq_affinity
-echo 0 > "${queue}"/nomerges
+# I/O Block
+for queue in /sys/block/*/queue/; do
+  nex "${queue}nr_requests" 128
+  nex "${queue}rq_affinity" 0
+  nex "${queue}nomerges" 0
 done
 
 # Notify nexus deamon know that we're done here
