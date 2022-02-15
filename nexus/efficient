@@ -30,6 +30,9 @@ nex /dev/stune/top-app/schedtune.boost 5
 nex /dev/stune/foreground/schedtune.boost 1
 nex /dev/stune/top-app/schedtune.prefer_idle 1
 
+# EAS
+nex /proc/sys/kernel/sched_energy_aware 0
+
 # CPU
 nex /sys/module/cpu_input_boost/parameters/input_boost_duration 64
 
