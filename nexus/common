@@ -14,9 +14,10 @@ nex /proc/sys/kernel/sched_boost 0
 nex /proc/sys/kernel/panic 0
 nex /proc/sys/kernel/panic_on_oops 0
 nex /proc/sys/kernel/printk "0 0 0 0"
-nex /proc/sys/kernel/sched_tunable_scaling
+nex /proc/sys/kernel/sched_tunable_scaling 0
 nex /proc/sys/kernel/compat-log 0
 nex /proc/sys/kernel/sched_cfs_boost 0
+nex /proc/sys/kernel/sched_schedstats 0
 
 # VM 
 nex /proc/sys/vm/oom_kill_allocating_task 0
