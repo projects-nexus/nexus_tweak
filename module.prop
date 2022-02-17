@@ -1,6 +1,6 @@
 id=nexus
 name=Nexus Tweaks
 version=x1-beta
-versionCode=69
+versionCode=2022
 author=TeamNexus
-description=A Magisk module aims to improve battery and performance
+description=Yet Another Android Universal Optimizer. Which aims to improve Battery and Performance for best user experience.
