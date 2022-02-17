@@ -2,11 +2,21 @@ SKIPUNZIP=1
 MODRM() {
 rm -rf $MODPATH/LICENSE 2>/dev/null
 rm -rf $MODPATH/README.md 2>/dev/null
+rm -rf $MODPATH/changelog.md 2>/dev/null
 }
 MODPRINT() {
 memtotalstr=`cat /proc/meminfo | grep MemTotal`
 memtotal=${memtotalstr:16:8}
 ramsize=`echo "($memtotal / 1048576 ) + 1" | bc`
+cat << "EOF"
+
+    _   __                        ______                    __  
+   / | / /__  _  ____  _______   /_  __/      _____  ____ _/ /__
+  /  |/ / _ \| |/_/ / / / ___/    / / | | /| / / _ \/ __ `/ //_/
+ / /|  /  __/>  </ /_/ (__  )    / /  | |/ |/ /  __/ /_/ / ,<   
+/_/ |_/\___/_/|_|\__,_/____/    /_/   |__/|__/\___/\__,_/_/|_|  
+                                                                
+EOF
 ui_print ""
 sleep 0.3
 ui_print "- Device : $(getprop ro.product.model) "
@@ -30,7 +40,7 @@ sleep 0.1
 ui_print "- SElinux Status : $(su -c getenforce) "
 ui_print ""
 sleep 0.2
-ui_print "- Unlocking The True Power Of $(getprop ro.product.system.device) "
+ui_print "- Unlocking The True Power Of $(getprop ro.build.product) "
 ui_print ""
 sleep 0.3
 # Moving FKM Script
