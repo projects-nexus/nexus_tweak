@@ -1,4 +1,5 @@
 # Nexus reserved
+nex.boot=0
 nex.lock=0
 nex.toast=0
 nex.profile=0
