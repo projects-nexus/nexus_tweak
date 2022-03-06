@@ -13,6 +13,14 @@ done
 # sleep extra 10s.
 sleep 10
 
+echo "- Hello, there! I'm NeX" > $nex_log
+
+echo "" >> $nex_log
+
+echo "- I am here to optimize your $(getprop ro.build.product)" >> $nex_log
+
+echo "" >> $nex_log
+
 # excute only once after flashing module
 boot=$(getprop nex.boot)
 
@@ -20,7 +28,7 @@ if [ "$boot" == "0" ]; then
 
 START=$(date +"%s")
 
-echo "- Starting Art Optimization" > $nex_log
+echo "- Starting Art Optimization" >> $nex_log
 
 echo "" >> $nex_log
 
