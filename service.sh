@@ -2,6 +2,7 @@
 MODDIR=${0%/*}
 
 sprop=/data/adb/modules/nexus/system.prop
+nex_log=/storage/emulated/0/Nexus_Tweaks.log
 
 # Detect whether Unlocked into System
 while $(dumpsys window policy | grep mIsShowing | awk -F= '{print $2}')
@@ -17,8 +18,22 @@ boot=$(getprop nex.boot)
 
 if [ "$boot" == "0" ]; then
 
+START=$(date +"%s")
+
+echo "- Starting Art Optimization" > $nex_log
+
+echo "" >> $nex_log
+
 # ART optimizer
 su -c cmd package bg-dexopt-job
+
+END=$(date +"%s")
+
+DIFF=$(($END - $START))
+
+echo "- Art Optimization took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s)." >> $nex_log
+
+echo "" >> $nex_log
 
 echo nex.boot=1 >> $sprop
 
