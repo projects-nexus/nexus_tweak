@@ -3,6 +3,7 @@ MODRM() {
 rm -rf $MODPATH/LICENSE 2>/dev/null
 rm -rf $MODPATH/README.md 2>/dev/null
 rm -rf $MODPATH/changelog.md 2>/dev/null
+rm -rf $MODPATH/custom 2>/dev/null
 }
 MODPRINT() {
 memtotalstr=`cat /proc/meminfo | grep MemTotal`
@@ -43,14 +44,14 @@ sleep 0.2
 ui_print "- Unlocking The True Power Of $(getprop ro.build.product) "
 ui_print ""
 sleep 0.3
-# Moving FKM Script
-mkdir -p /data/media/0/franco.kernel_updater/scripts
-cp -f $MODPATH/custom/FKM/*.sh /data/media/0/franco.kernel_updater/scripts
-rm -rf $MODPATH/custom
-sleep 0.3
 ui_print "-  Check Internal Storage / Nexus_Tweaks.log For Logs "
 sleep 0.3
 ui_print ""
+}
+MODFKM() {
+# Moving FKM Script
+mkdir -p /data/media/0/franco.kernel_updater/scripts
+cp -f $MODPATH/custom/FKM/*.sh /data/media/0/franco.kernel_updater/scripts
 }
 MODEXTRACT() {
 ui_print "- Extracting module files"
@@ -71,5 +72,6 @@ set_perm_recursive $MODPATH/system/bin 0 2000 0755 0755
 set -x
 MODPRINT
 MODEXTRACT
+MODFKM
 MODPERM
 MODRM
