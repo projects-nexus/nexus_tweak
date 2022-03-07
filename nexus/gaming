@@ -11,7 +11,7 @@ function nex () {
 
 # Kernel
 nex /proc/sys/kernel/sched_child_runs_first 0
-nex /proc/sys/kernel/timer_migration 1
+nex /proc/sys/kernel/timer_migration 0
 nex /proc/sys/kernel/perf_cpu_time_max_percent 15
 nex /proc/sys/kernel/sched_min_granularity_ns 3000000
 nex /proc/sys/kernel/sched_migration_cost_ns 1000000
