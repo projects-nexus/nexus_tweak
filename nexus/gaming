@@ -42,6 +42,16 @@ nex /sys/module/mmc_core/parameters/use_spi_crc 0
 # GPU
 nex /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 3
 
+# adreno idler
+if [ -e /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost ]; then
+nex /sys/module/adreno_idler/parameters/adreno_idler_active 0
+else
+nex /sys/module/adreno_idler/parameters/adreno_idler_active 1
+nex /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 64
+nex /sys/module/adreno_idler/parameters/adreno_idler_idlewait 64
+nex /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 64
+fi
+
 nex /sys/class/kgsl/kgsl-3d0/throttling 0
 nex /sys/class/kgsl/kgsl-3d0/force_clk_on 1
 nex /sys/class/kgsl/kgsl-3d0/force_bus_on 1

@@ -40,7 +40,13 @@ nex /sys/module/cpu_input_boost/parameters/input_boost_duration 64
 nex /sys/module/mmc_core/parameters/use_spi_crc 0
 
 # GPU
-nex /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 1
+nex /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
+
+# adreno idler
+nex /sys/module/adreno_idler/parameters/adreno_idler_active 1
+nex /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 20
+nex /sys/module/adreno_idler/parameters/adreno_idler_idlewait 25
+nex /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 4000
 
 nex /sys/class/kgsl/kgsl-3d0/throttling 0
 nex /sys/class/kgsl/kgsl-3d0/force_clk_on 1
