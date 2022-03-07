@@ -48,6 +48,8 @@ nex /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 20
 nex /sys/module/adreno_idler/parameters/adreno_idler_idlewait 25
 nex /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 4000
 
+nex /sys/class/kgsl/kgsl-3d0/devfreq/polling_interval 8
+
 nex /sys/class/kgsl/kgsl-3d0/throttling 0
 nex /sys/class/kgsl/kgsl-3d0/force_clk_on 1
 nex /sys/class/kgsl/kgsl-3d0/force_bus_on 1
