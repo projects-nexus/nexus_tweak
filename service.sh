@@ -26,6 +26,8 @@ boot=$(getprop nex.boot)
 
 if [ "$boot" == "0" ]; then
 
+su -lp 2000 -c "cmd notification post -S bigtext -t Starting-Art-Optimization tag Device-May-Heat-or-lag-for-few-min"
+
 START=$(date +"%s")
 
 echo "- Starting Art Optimization" >> $nex_log
@@ -39,11 +41,17 @@ END=$(date +"%s")
 
 DIFF=$(($END - $START))
 
+artime="$(($DIFF / 60))-mins-and-$(($DIFF % 60))-sec"
+
+su -lp 2000 -c "cmd notification post -S bigtext -t Art_Optimization_Completed tag Took-$artime"
+
 echo "- Art Optimization took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s)." >> $nex_log
 
 echo "" >> $nex_log
 
 echo nex.boot=1 >> $sprop
+
+sleep 5
 
 fi
 
