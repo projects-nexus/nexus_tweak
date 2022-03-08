@@ -7,6 +7,9 @@ function nex () {
 	fi
 }
 
+# drop ram cache ( clear pagecache, dentries, and inodes )
+nex /proc/sys/vm/drop_caches 3
+
 # Kernel
 nex /proc/sys/kernel/sched_child_runs_first 0
 nex /proc/sys/kernel/timer_migration 0
@@ -77,6 +80,9 @@ echo 64 > "${queue}"/nr_requests
 echo 2 > "${queue}"/rq_affinity
 echo 2 > "${queue}"/nomerges
 done
+
+# Only clear pagecache
+nex /proc/sys/vm/drop_caches 1
 
 # Notify nexus deamon know that we're done here
 resetprop nex.profile 2
