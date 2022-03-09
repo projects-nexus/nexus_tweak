@@ -16,6 +16,7 @@ nex /proc/sys/kernel/sched_tunable_scaling 0
 nex /proc/sys/kernel/compat-log 0
 nex /proc/sys/kernel/sched_cfs_boost 0
 nex /proc/sys/kernel/sched_schedstats 0
+nex /proc/sys/kernel/printk_devkmsg off
 
 # VM 
 nex /proc/sys/vm/oom_kill_allocating_task 0
