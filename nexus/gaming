@@ -82,6 +82,16 @@ echo 2 > "${queue}"/rq_affinity
 echo 2 > "${queue}"/nomerges
 done
 
+# slow charging in game mode
+if [ -e /data/adb/modules/XCM/system/bin/xcharge ] && [ "$(getprop nex.xc)" == "1" ]; then
+setprop xc_mode $(getprop xcharge)
+resetprop xcharge slow
+# use same profile after reboot
+sed -i '/nex.xc=/s/.*/nex.xc=1/' /data/adb/modules/nexus/system.prop
+else
+sed -i '/nex.xc=/s/.*/nex.xc=0/' /data/adb/modules/nexus/system.prop
+fi
+
 # Only clear pagecache
 nex /proc/sys/vm/drop_caches 1
 

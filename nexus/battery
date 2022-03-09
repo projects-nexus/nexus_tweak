@@ -75,6 +75,11 @@ echo 0 > "${queue}"/rq_affinity
 echo 0 > "${queue}"/nomerges
 done
 
+# Check if last profile was gaming or not
+if [ -e /data/adb/modules/XCM/system/bin/xcharge ] && [ "$(getprop nex.profile)" == "2" ]; then
+resetprop xcharge $(getprop xc_mode)
+fi
+
 # Notify nexus deamon know that we're done here
 resetprop nex.profile 0
 sed -i '/nex.profile=/s/.*/nex.profile=0/' /data/adb/modules/nexus/system.prop
