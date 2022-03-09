@@ -60,8 +60,8 @@ nex /sys/class/kgsl/kgsl-3d0/dispatch/inflight 20
 nex /sys/class/kgsl/kgsl-3d0/dispatch/inflight_low_latency 5
 
 # Schedutil Bess
-nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 2000
-nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 2000
+nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 20000
+nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us 20000
 nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/iowait_boost_enable 1
 nex /sys/devices/system/cpu/cpu4/cpufreq/schedutil/iowait_boost_enable 0
 nex /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 500
