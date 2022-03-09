@@ -14,6 +14,7 @@ nex /proc/sys/kernel/perf_cpu_time_max_percent 15
 nex /proc/sys/kernel/sched_min_granularity_ns 2500000
 nex /proc/sys/kernel/sched_migration_cost_ns 1000000
 nex /proc/sys/kernel/sched_nr_migrate 64
+nex /proc/sys/kernel/sched_autogroup_enabled 1
 
 # Fs
 nex /proc/sys/fs/lease-break-time 25
