@@ -25,9 +25,9 @@ nex /proc/sys/vm/vfs_cache_pressure 24
 nex /proc/sys/vm/swappiness 60
 
 # Stuneboost
-nex /dev/stune/top-app/schedtune.boost 1
+nex /dev/stune/top-app/schedtune.boost 5
 nex /dev/stune/foreground/schedtune.boost 0
-nex /dev/stune/top-app/schedtune.prefer_idle 0
+nex /dev/stune/top-app/schedtune.prefer_idle 1
 
 # EAS
 nex /proc/sys/kernel/sched_energy_aware 1
