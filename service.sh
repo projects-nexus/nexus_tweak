@@ -52,8 +52,22 @@ fi
 
 if ! [ -d "$mmodule" ]; then
 
+START1=$(date +"%s")
+
+echo "- Starting DUS Optimization" >> $nex_log
+
+echo "" >> $nex_log
+
 # DUS optimizer
 dus
+
+END1=$(date +"%s")
+
+DIFF1=$(($END1 - $START1))
+
+echo "- DUS Optimization took $(($DIFF1 / 60)) minute(s) and $(($DIFF1 % 60)) second(s)." >> $nex_log
+
+echo "" >> $nex_log
 
 fi
 
