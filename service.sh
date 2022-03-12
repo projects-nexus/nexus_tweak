@@ -4,6 +4,9 @@ MODDIR=${0%/*}
 sprop=/data/adb/modules/nexus/system.prop
 nex_log=/storage/emulated/0/Nexus_Tweaks.log
 
+# Universal GMS Doze Module Path
+mmodule=/data/adb/modules/universal-gms-doze
+
 # Detect whether Unlocked into System
 while $(dumpsys window policy | grep mIsShowing | awk -F= '{print $2}')
 do
@@ -44,6 +47,13 @@ echo "- Art Optimization took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seco
 echo "" >> $nex_log
 
 echo nex.boot=1 >> $sprop
+
+fi
+
+if ! [ -d "$mmodule" ]; then
+
+# DUS optimizer
+dus
 
 fi
 
