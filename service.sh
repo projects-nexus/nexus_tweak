@@ -16,6 +16,8 @@ done
 # sleep extra 10s.
 sleep 10
 
+NexSTART=$(date +"%s")
+
 echo "- Hello, there! I'm NeX" > $nex_log
 
 echo "" >> $nex_log
@@ -23,6 +25,8 @@ echo "" >> $nex_log
 echo "- I am here to optimize your $(getprop ro.build.product)" >> $nex_log
 
 echo "" >> $nex_log
+
+su -lp 2000 -c "cmd notification post -S bigtext -t Starting-Nexus-Optimizations tag Device-May-Heat-or-lag-for-few-min"
 
 # excute only once after flashing module
 boot=$(getprop nex.boot)
@@ -71,7 +75,13 @@ echo "" >> $nex_log
 
 fi
 
-su -lp 2000 -c "cmd notification post -S bigtext -t Nexus-Tweaks tag Activated"
+NexEND=$(date +"%s")
+
+NexDIFF=$(($NexEND - $NexSTART))
+
+NexTime="$(($NexDIFF / 60))-mins-and-$(($NexDIFF % 60))-secs"
+
+su -lp 2000 -c "cmd notification post -S bigtext -t Nexus-Optimizations-Completed tag Took-$NexTime"
 
 # Where It All Begins
 nice -n -9 nAi
