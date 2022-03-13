@@ -1,5 +1,6 @@
 # Nexus reserved
 nex.xc=0
+nex.dus=1
 nex.boot=0
 nex.lock=0
 nex.toast=0
