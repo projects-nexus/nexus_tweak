@@ -87,8 +87,10 @@ su -lp 2000 -c "cmd notification post -S bigtext -t Nexus-Tweaks tag Activated"
 
 fi
 
+# execute common tweaks
+common > /dev/null
+
 # Where It All Begins
 nice -n -9 nAi
-common > /dev/null
 
 exit 0
