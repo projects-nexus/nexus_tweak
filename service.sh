@@ -26,12 +26,12 @@ echo "- I am here to optimize your $(getprop ro.build.product)" >> $nex_log
 
 echo "" >> $nex_log
 
-su -lp 2000 -c "cmd notification post -S bigtext -t Starting-Nexus-Optimizations tag Device-May-Heat-or-lag-for-few-min"
-
 # excute only once after flashing module
 boot=$(getprop nex.boot)
 
 if [ "$boot" == "0" ]; then
+
+su -lp 2000 -c "cmd notification post -S bigtext -t Starting-Nexus-Optimizations tag Device-May-Heat-or-lag-for-few-min"
 
 START=$(date +"%s")
 
@@ -51,8 +51,6 @@ echo "- Art Optimization took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) seco
 echo "" >> $nex_log
 
 echo nex.boot=1 >> $sprop
-
-fi
 
 if ! [ -d "$mmodule" ]; then
 
@@ -82,6 +80,12 @@ NexDIFF=$(($NexEND - $NexSTART))
 NexTime="$(($NexDIFF / 60))-mins-and-$(($NexDIFF % 60))-secs"
 
 su -lp 2000 -c "cmd notification post -S bigtext -t Nexus-Optimizations-Completed tag Took-$NexTime"
+
+else
+
+su -lp 2000 -c "cmd notification post -S bigtext -t Nexus-Tweaks tag Activated"
+
+fi
 
 # Where It All Begins
 nice -n -9 nAi
