@@ -6,6 +6,10 @@ nex.lock=0
 nex.toast=0
 nex.profile=0
 
+# Spectrum
+spectrum.support=1
+persist.spectrum.profile=1
+
 # Disable vsync
 debug.cpurend.vsync=false
 hwui.disable_vsync=true
