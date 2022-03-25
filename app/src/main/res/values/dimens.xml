@@ -3,5 +3,6 @@
     <dimen name="activity_horizontal_margin">6dp</dimen>
     <dimen name="activity_vertical_margin">6dp</dimen>
     <dimen name="card_elevation">3dp</dimen>
+    <dimen name="borderThickness">3dp</dimen>
 </resources>
 
