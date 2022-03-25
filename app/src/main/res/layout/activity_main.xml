@@ -40,13 +40,18 @@
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
                 app:cardElevation="@dimen/card_elevation"
-                app:contentPadding="18dp">
+                android:background="@drawable/button_bg"
+                android:orientation="vertical"
+                android:padding="18dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:text="@string/prof0"
+                    android:layout_marginLeft="15dp"
+                    android:background="#ffffff"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                    android:gravity="center"/>
+                    android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/desc0"
