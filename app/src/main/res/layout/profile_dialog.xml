@@ -22,7 +22,7 @@
         android:text="@string/cancelText"
         android:textColor="@color/colorAccent"
         android:paddingBottom="10dp"
-        android:background="@android:color/transparent"/>
+        android:background="@color/splash_background" />
 
     <Button
         android:layout_width="wrap_content"
@@ -33,6 +33,6 @@
         android:text="@string/confirmText"
         android:textColor="@color/colorAccent"
         android:paddingBottom="10dp"
-        android:background="@android:color/transparent" />
+        android:background="@color/splash_background" />
 
 </RelativeLayout>
