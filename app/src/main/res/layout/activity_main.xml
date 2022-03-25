@@ -47,13 +47,6 @@
                     android:text="@string/prof0"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="end"
-                    android:src="@drawable/atom"
-                    android:tint="#fff"/>
-
                 <TextView
                     android:id="@+id/desc0"
                     android:layout_marginTop="34dp"
@@ -82,13 +75,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/prof1"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:src="@drawable/rocket"
-                    android:tint="#fff"/>
 
                 <TextView
                     android:id="@+id/desc1"
@@ -119,13 +105,6 @@
                     android:text="@string/prof2"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:src="@drawable/battery"
-                    android:tint="#fff"/>
-
                 <TextView
                     android:id="@+id/desc2"
                     android:layout_marginTop="34dp"
@@ -154,13 +133,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/prof3"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:src="@drawable/game"
-                    android:tint="#fff"/>
 
                 <TextView
                     android:id="@+id/desc3"
