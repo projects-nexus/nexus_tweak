@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.net.Uri;
 
 import java.util.List;
 import java.util.Objects;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private List<String> suResult = null;
     private int notaneasteregg = 0;
     private static final int PERMISSIONS_REQUEST = 0;
+    private TextView textup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         final int perColor = ContextCompat.getColor(this, R.color.colorBalance);
         final int batColor = ContextCompat.getColor(this, R.color.colorBattery);
         final int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
+        final int updColor = ContextCompat.getColor(this, R.color.colorUpdate);
 
         // Check for Spectrum Support
         if (!checkSupport(this)) {
@@ -173,6 +176,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cardClick(card3, 3, gamColor);
                 notaneasteregg = 1;
+            }
+        });
+        
+        textup = (TextView)findViewById(R.id.textup);
+        textup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://t.me/NexusKernel";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
 
