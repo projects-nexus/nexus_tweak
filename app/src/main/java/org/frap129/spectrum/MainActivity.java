@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.net.Uri;
 
 import java.util.List;
 import java.util.Objects;
@@ -173,6 +174,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cardClick(card3, 3, gamColor);
                 notaneasteregg = 1;
+            }
+        });
+        
+        CardView textup = (CardView)findViewById(R.id.textup);
+        textup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://t.me/NexusKernel";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
 

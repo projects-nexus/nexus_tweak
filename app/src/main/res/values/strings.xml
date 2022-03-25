@@ -6,6 +6,7 @@
     <string name="prof1">Balance</string>
     <string name="prof2">Battery</string>
     <string name="prof3">Gaming</string>
+    <string name="prof4">Update</string>
 
     <!-- Support Strings -->
     <string name="no_spectrum_support_dialog_title">No Spectrum support detected</string>
@@ -19,6 +20,7 @@
     <string name="profdesc1">Tuned for top tier performance in standard tasks with many less regressions than Balanced, but maintains battery by limiting graphics.</string>
     <string name="profdesc2">Ultra-conservative profile that lets performance take a hit in order to achieve long-lasting battery life.</string>
     <string name="profdesc3">Need that extra 10 FPS? I gotchu. Identical to performance in most areas other than the unlocked Graphics performance</string>
+    <string name="profdesc4">Join our Support Group for Support and Update</string>
 
     <!-- Profile Loader -->
     <string name="aboutLoader">Woah there!</string>
