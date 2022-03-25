@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         final int batColor = ContextCompat.getColor(this, R.color.colorBattery);
         final int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
         final int updColor = ContextCompat.getColor(this, R.color.colorUpdate);
+        final int bgcColor = ContextCompat.getColor(this, R.color.splash_background);
 
         // Check for Spectrum Support
         if (!checkSupport(this)) {
@@ -138,8 +139,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
             cardClick(card0, 0, balColor);
                 if (notaneasteregg == 1) {
+                    cardClick(card0, 0, balColor);
                     notaneasteregg++;
                 } else {
+                    cardClick(card0, 0, bgcColor);
                     notaneasteregg = 0;
                 }
             }
