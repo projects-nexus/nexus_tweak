@@ -57,6 +57,14 @@
                     android:textAppearance="@android:style/TextAppearance.Material.Small"
                     android:gravity="center"/>
 
+                <ImageView
+                    android:width="24dp"
+                    android:height="24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@drawable/button_bg" />
+
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
