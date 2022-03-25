@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.net.Uri;
 
 import java.util.List;
 import java.util.Objects;
@@ -57,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
         final CardView card1 = (CardView) findViewById(R.id.card1);
         final CardView card2 = (CardView) findViewById(R.id.card2);
         final CardView card3 = (CardView) findViewById(R.id.card3);
+        final CardView card4 = (CardView) findViewById(R.id.card4);
         final int balColor = ContextCompat.getColor(this, R.color.colorAutomatic);
         final int perColor = ContextCompat.getColor(this, R.color.colorBalance);
         final int batColor = ContextCompat.getColor(this, R.color.colorBattery);
         final int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
+        final int updColor = ContextCompat.getColor(this, R.color.colorUpdate);
 
         // Check for Spectrum Support
         if (!checkSupport(this)) {
@@ -146,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cardClick(card1, 1, perColor);
-                if (notaneasteregg == 3) {
+                if (notaneasteregg == 4) {
                     Intent intent = new Intent(MainActivity.this, ProfileLoaderActivity.class);
                     startActivity(intent);
                     finish();
@@ -160,6 +163,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cardClick(card2, 2, batColor);
+                if (notaneasteregg == 3) {
+                    notaneasteregg++;
+                } else {
+                    notaneasteregg = 0;
+                }
+            }
+        });
+        
+        card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cardClick(card3, 3, gamColor);
                 if (notaneasteregg == 2) {
                     notaneasteregg++;
                 } else {
@@ -167,12 +182,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        card3.setOnClickListener(new View.OnClickListener() {
+        
+        card4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cardClick(card3, 3, gamColor);
-                notaneasteregg = 1;
+                cardClick(card4, 4, updColor);
+                String url = "https://t.me/NexusKernel";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
 
