@@ -33,6 +33,7 @@
                 android:id="@+id/card0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button_bg"
                 android:layout_marginTop="10dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
@@ -46,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/prof0"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                    android:background="@drawable/button_bg"
                     android:gravity="center"/>
 
                 <TextView
@@ -55,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc0"
                     android:textAppearance="@android:style/TextAppearance.Material.Small"
+                    android:background="@drawable/button_bg"
                     android:gravity="center"/>
 
             </android.support.v7.widget.CardView>
