@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.net.Uri;
 
@@ -52,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        ImageView bg = (ImageView)findViewById(R.id.colourbg);
+        bg.setBackgroundTintList(ColorStateList.valueOf(R.color.colorGaming));
 
         // Define existing CardViews
         final CardView card0 = (CardView) findViewById(R.id.card0);

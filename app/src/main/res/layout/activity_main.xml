@@ -41,6 +41,16 @@
                 android:clickable="true"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
+                
+                <ImageView
+                    android:id="@+id/colourbg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg"
+                    android:cropToPadding="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter" />
+                
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
