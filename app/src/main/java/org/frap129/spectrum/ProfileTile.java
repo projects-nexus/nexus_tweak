@@ -46,11 +46,11 @@ public class ProfileTile extends TileService {
             editor.apply();
         } else if (isActive && !click){
             Utils.setProfile(1);
-            editor.putString("profile", "performance");
+            editor.putString("profile", "balance");
             editor.apply();
         } else {
             Utils.setProfile(0);
-            editor.putString("profile", "balanced");
+            editor.putString("profile", "automatic");
             editor.apply();
         }
 
@@ -87,12 +87,12 @@ public class ProfileTile extends TileService {
             newLabel = "Battery";
             newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.battery);
             click = true;
-        } else if (profile.contains("performance") && !disabledProfilesList.contains(profile)){
-            newLabel = "Performance";
+        } else if (profile.contains("balance") && !disabledProfilesList.contains(profile)){
+            newLabel = "Balance";
             newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.rocket);
             click = true;
-        } else if (profile.contains("balanced") && !disabledProfilesList.contains(profile)) {
-            newLabel = "Balance";
+        } else if (profile.contains("automatic") && !disabledProfilesList.contains(profile)) {
+            newLabel = "Automatic";
             newIcon = Icon.createWithResource(getApplicationContext(), R.drawable.atom);
             click = false;
         } else {
