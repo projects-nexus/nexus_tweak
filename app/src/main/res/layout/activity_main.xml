@@ -44,6 +44,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/splash_background"
                     android:text="@string/prof0"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
                     android:gravity="center"/>
@@ -74,6 +75,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/splash_background"
                     android:text="@string/prof1"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
                     android:gravity="center"/>
@@ -104,6 +106,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/splash_background"
                     android:text="@string/prof2"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
                     android:gravity="center"/>
@@ -134,6 +137,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/splash_background"
                     android:text="@string/prof3"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
                     android:gravity="center"/>
@@ -165,6 +169,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/splash_background"
                     android:text="@string/prof4"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
                     android:gravity="center"/>
