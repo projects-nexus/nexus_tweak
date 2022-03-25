@@ -6,5 +6,6 @@
     <color name="colorBalance">#fb8c00</color>
     <color name="colorBattery">#43a047</color>
     <color name="colorGaming">#ef5350</color>
+    <color name="colorBorder">#ef5350</color>
     <color name="splash_background">#000000</color>
 </resources>
