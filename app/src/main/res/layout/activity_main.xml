@@ -39,8 +39,15 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
-                app:cardElevation="@dimen/card_elevation"
+                app:cardElevation="0dp"
                 app:contentPadding="18dp">
+                
+                <ImageView
+                    android:src="@drawable/button_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+                
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
