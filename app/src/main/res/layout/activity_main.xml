@@ -39,6 +39,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:background="@drawable/bg"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -69,6 +70,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:background="@drawable/bg"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -99,6 +101,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:background="@drawable/bg"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -129,6 +132,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:background="@drawable/bg"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -160,6 +164,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:background="@drawable/bg"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
