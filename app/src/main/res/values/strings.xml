@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Spectrum</string>
+    <string name="app_name"> Nexus Tweak</string>
 
     <!-- Profile Names -->
-    <string name="prof0">Balance</string>
-    <string name="prof1">Performance</string>
+    <string name="prof0">Automatic</string>
+    <string name="prof1">Balance</string>
     <string name="prof2">Battery</string>
     <string name="prof3">Gaming</string>
 

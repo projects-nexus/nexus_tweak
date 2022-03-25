@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         final CardView card1 = (CardView) findViewById(R.id.card1);
         final CardView card2 = (CardView) findViewById(R.id.card2);
         final CardView card3 = (CardView) findViewById(R.id.card3);
-        final int balColor = ContextCompat.getColor(this, R.color.colorBalance);
-        final int perColor = ContextCompat.getColor(this, R.color.colorPerformance);
+        final int balColor = ContextCompat.getColor(this, R.color.colorAutomatic);
+        final int perColor = ContextCompat.getColor(this, R.color.colorBalance);
         final int batColor = ContextCompat.getColor(this, R.color.colorBattery);
         final int gamColor = ContextCompat.getColor(this, R.color.colorGaming);
 
@@ -106,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
         String[] profilesToDisable = disabledProfiles.split(",");
         for (String profile : profilesToDisable){
             switch (profile) {
-                case "balance":
+                case "Automatic":
                     card0.setVisibility(View.GONE);
                     break;
-                case "performance":
+                case "balance":
                     card1.setVisibility(View.GONE);
                     break;
                 case "battery":
@@ -196,17 +196,17 @@ public class MainActivity extends AppCompatActivity {
                 // Default KPM value, just in case
             } else if (result.contains("0")) {
                 CardView card0 = (CardView) findViewById(R.id.card0);
-                int balColor = ContextCompat.getColor(this, R.color.colorBalance);
+                int balColor = ContextCompat.getColor(this, R.color.colorAutomatic);
                 card0.setCardBackgroundColor(balColor);
                 oldCard = card0;
-                editor.putString("profile", "balanced");
+                editor.putString("profile", "automatic");
                 editor.apply();
             } else if (result.contains("1")) {
                 CardView card1 = (CardView) findViewById(R.id.card1);
-                int perColor = ContextCompat.getColor(this, R.color.colorPerformance);
+                int perColor = ContextCompat.getColor(this, R.color.colorBalance);
                 card1.setCardBackgroundColor(perColor);
                 oldCard = card1;
-                editor.putString("profile", "performance");
+                editor.putString("profile", "balance");
                 editor.apply();
             } else if (result.contains("2")) {
                 CardView card2 = (CardView) findViewById(R.id.card2);
@@ -251,8 +251,8 @@ public class MainActivity extends AppCompatActivity {
         desc0.setText(balDesc);
 
         if (Utils.supportsCustomDesc()){
-            if(!Objects.equals(getCustomDesc("balance"), "fail")) desc0.setText(getCustomDesc("balance"));
-            if(!Objects.equals(getCustomDesc("performance"), "fail")) desc1.setText(getCustomDesc("performance"));
+            if(!Objects.equals(getCustomDesc("automatic"), "fail")) desc0.setText(getCustomDesc("automatic"));
+            if(!Objects.equals(getCustomDesc("balance"), "fail")) desc1.setText(getCustomDesc("balance"));
             if(!Objects.equals(getCustomDesc("battery"), "fail")) desc2.setText(getCustomDesc("battery"));
             if(!Objects.equals(getCustomDesc("gaming"), "fail")) desc3.setText(getCustomDesc("gaming"));
         }
