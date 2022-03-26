@@ -6,7 +6,7 @@
     <string name="prof1">Balance</string>
     <string name="prof2">Battery</string>
     <string name="prof3">Gaming</string>
-    <string name="prof4">Update</string>
+    <string name="prof4">Update and Support</string>
 
     <!-- Support Strings -->
     <string name="no_spectrum_support_dialog_title">No Spectrum support detected</string>
