@@ -30,6 +30,12 @@ class Utils {
     public static String kernelProp = "persist.spectrum.kernel";
 
     public static String kpmPropPath = "/proc/kpm_name";
+    
+    public static String deviceProp = "ro.product.model";
+    
+    public static String androProp = "ro.system.build.version.release";
+    
+    public static String socProp = "ro.board.platform";
 
     public static Boolean KPM;
 
