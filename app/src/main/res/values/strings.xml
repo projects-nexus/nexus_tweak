@@ -21,6 +21,10 @@
     <string name="profdesc2">This Mode Reduces performance In order to achieve long-lasting battery backup</string>
     <string name="profdesc3">This Mode Unlocks maximum performance of device to improve gaming experience</string>
     <string name="profdesc4">Join Support Group For Updates</string>
+    <string name="profdesc5">Device : devi</string>
+    <string name="profdesc6">Android Version : andro</string>
+    <string name="profdesc7">Processor : soc</string>
+    <string name="profdesc8">Selinux : geten</string>
 
     <!-- Profile Loader -->
     <string name="aboutLoader">Woah there!</string>
