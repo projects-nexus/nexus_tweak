@@ -160,8 +160,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/card3"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:foreground="@drawable/button_bg"
                 app:cardCornerRadius="18dp"
                 app:cardElevation="@dimen/card_elevation"
@@ -174,7 +172,7 @@
 
                 <TextView
                     android:id="@+id/desc5"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc5"
@@ -182,7 +180,7 @@
                     
                 <TextView
                     android:id="@+id/desc6"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="55dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc6"
@@ -190,7 +188,7 @@
 
                  <TextView
                     android:id="@+id/desc7"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="80dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc7"
@@ -198,7 +196,7 @@
                     
                  <TextView
                     android:id="@+id/desc8"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="105dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc8"
