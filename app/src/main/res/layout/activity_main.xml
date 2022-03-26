@@ -46,9 +46,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:text="@string/prof0"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                    android:gravity="center"/>
+                    android:layout_marginLeft="15dp"
+                    android:textAppearance="@android:style/TextAppearance.Material.Headline"/>
 
                 <TextView
                     android:id="@+id/desc0"
