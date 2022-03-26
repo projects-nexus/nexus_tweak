@@ -6,7 +6,7 @@
     <string name="prof1">Balance</string>
     <string name="prof2">Battery</string>
     <string name="prof3">Gaming</string>
-    <string name="prof4">Update and Support</string>
+    <string name="prof4">Support</string>
 
     <!-- Support Strings -->
     <string name="no_spectrum_support_dialog_title">No Spectrum support detected</string>
@@ -16,11 +16,11 @@
     <string name="custom_descriptions_fail_text">Storage permission denied, Couldn\'t look for custom descriptions</string>
   
     <!-- Default Profile Descriptions -->
-    <string name="profdesc0">AutoMode for Over-all Best Experience .</string>
-    <string name="profdesc1">Improves Efficiency of devices</string>
-    <string name="profdesc2">Makes battery life long-lasting.</string>
-    <string name="profdesc3">Unlock max performance of devices </string>
-    <string name="profdesc4">Join Support Group For Updates</string>
+    <string name="profdesc0">This Mode Automatically Detects App and Apply Profile according to need .</string>
+    <string name="profdesc1">This Mode Aims To Improve the Performance while maintaining fantastic battery .</string>
+    <string name="profdesc2">This Mode Reduces performance In order to achieve long-lasting battery backup .</string>
+    <string name="profdesc3">This Mode Unlocks maximum performance of device to improve gaming experience.</string>
+    <string name="profdesc4">Tap and join our support group for update and help incase you get a problem</string>
     <string name="profdesc5">Device : devi</string>
     <string name="profdesc6">Android Version : andro</string>
     <string name="profdesc7">Processor : soc</string>
