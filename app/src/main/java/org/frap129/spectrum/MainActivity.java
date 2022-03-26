@@ -40,11 +40,17 @@ import static org.frap129.spectrum.Utils.listToString;
 import static org.frap129.spectrum.Utils.notTunedGov;
 import static org.frap129.spectrum.Utils.profileProp;
 import static org.frap129.spectrum.Utils.setProfile;
+import static org.frap129.spectrum.Utils.deviceProp;
+import static org.frap129.spectrum.Utils.androProp;
+import static org.frap129.spectrum.Utils.socProp;
 
 public class MainActivity extends AppCompatActivity {
 
     private CardView oldCard;
     private List<String> suResult = null;
+    private List<String> suResult1 = null;
+    private List<String> suResult2 = null;
+    private List<String> suResult3 = null;
     private int notaneasteregg = 0;
     private static final int PERMISSIONS_REQUEST = 0;
 
@@ -247,6 +253,9 @@ public class MainActivity extends AppCompatActivity {
         TextView desc1 = (TextView) findViewById(R.id.desc1);
         TextView desc2 = (TextView) findViewById(R.id.desc2);
         TextView desc3 = (TextView) findViewById(R.id.desc3);
+        TextView desc5 = (TextView) findViewById(R.id.desc5);
+        TextView desc6 = (TextView) findViewById(R.id.desc6);
+        TextView desc7 = (TextView) findViewById(R.id.desc7);
         String balDesc;
         String kernel;
 
@@ -261,6 +270,31 @@ public class MainActivity extends AppCompatActivity {
         balDesc = desc0.getText().toString();
         balDesc = balDesc.replaceAll("\\bElectron\\b", kernel);
         desc0.setText(balDesc);
+        
+        suResult1 = Shell.SU.run(String.format("getprop %s", deviceProp));
+        suResult2 = Shell.SU.run(String.format("getprop %s", androProp));
+        suResult3 = Shell.SU.run(String.format("getprop %s", socProp));
+        
+        String kernel1 = listToString(suResult1);
+        if (kernel1.isEmpty())
+            return;
+        String device = desc5.getText().toString();
+        device = device.replaceAll("\\bdevi\\b", kernel1);
+        desc5.setText(device);
+
+        String kernel2 = listToString(suResult2);
+        if (kernel2.isEmpty())
+            return;
+        String andro = desc6.getText().toString();
+        andro = andro.replaceAll("\\bandro\\b", kernel2);
+        desc6.setText(andro);
+        
+        String kernel3 = listToString(suResult3);
+        if (kernel3.isEmpty())
+            return;
+        String soc = desc7.getText().toString();
+        soc = soc.replaceAll("\\bsoc\\b", kernel3);
+        desc7.setText(soc);
 
         if (Utils.supportsCustomDesc()){
             if(!Objects.equals(getCustomDesc("automatic"), "fail")) desc0.setText(getCustomDesc("automatic"));
