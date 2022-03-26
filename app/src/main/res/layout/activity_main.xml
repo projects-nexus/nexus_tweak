@@ -39,7 +39,7 @@
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:foreground="@drawable/button_bg"
-                app:cardCornerRadius="18dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="28dp">
                 <TextView
@@ -95,7 +95,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:clickable="true"
                 android:foreground="@drawable/button_bg"
-                app:cardCornerRadius="18dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -126,7 +126,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:clickable="true"
                 android:foreground="@drawable/button_bg"
-                app:cardCornerRadius="18dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -157,7 +157,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:clickable="true"
                 android:foreground="@drawable/button_bg"
-                app:cardCornerRadius="18dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -188,7 +188,7 @@
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:clickable="true"
                 android:foreground="@drawable/button_bg"
-                app:cardCornerRadius="18dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -219,9 +219,9 @@
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:foreground="@drawable/button_bg"
-                app:cardCornerRadius="18dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="@dimen/card_elevation"
-                app:contentPadding="23dp">
+                app:contentPadding="21dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
