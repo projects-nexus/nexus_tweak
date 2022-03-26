@@ -39,6 +39,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:foreground="@drawable/button_bg"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -69,6 +71,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:foreground="@drawable/button_bg"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -99,6 +103,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:foreground="@drawable/button_bg"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -129,6 +135,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:foreground="@drawable/button_bg"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
@@ -160,6 +168,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
+                android:foreground="@drawable/button_bg"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="@dimen/card_elevation"
                 app:contentPadding="18dp">
                 <TextView
