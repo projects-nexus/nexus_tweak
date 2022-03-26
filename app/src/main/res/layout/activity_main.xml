@@ -33,7 +33,7 @@
                 android:id="@+id/card0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="10dp"
@@ -47,11 +47,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/prof0"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <TextView
                     android:id="@+id/desc0"
-                    android:layout_marginTop="34dp"
+                    android:layout_marginTop="35dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc0"
@@ -64,7 +64,7 @@
                 android:id="@+id/card1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="30dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/card0"
                 android:layout_marginStart="10dp"
@@ -78,11 +78,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/prof1"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <TextView
                     android:id="@+id/desc1"
-                    android:layout_marginTop="34dp"
+                    android:layout_marginTop="35dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc1"
@@ -95,7 +95,7 @@
                 android:id="@+id/card2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="30dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/card1"
                 android:layout_marginStart="10dp"
@@ -109,11 +109,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/prof2"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <TextView
                     android:id="@+id/desc2"
-                    android:layout_marginTop="34dp"
+                    android:layout_marginTop="35dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc2"
@@ -126,7 +126,7 @@
                 android:id="@+id/card3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="30dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/card2"
                 android:layout_marginStart="10dp"
@@ -140,11 +140,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/prof3"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <TextView
                     android:id="@+id/desc3"
-                    android:layout_marginTop="34dp"
+                    android:layout_marginTop="35dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc3"
@@ -157,8 +157,8 @@
                 android:id="@+id/textup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/card3"
                 android:layout_marginStart="10dp"
@@ -172,10 +172,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/prof4"
-                    android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <TextView
-                    android:layout_marginTop="34dp"
+                    android:layout_marginTop="35dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/profdesc4"
