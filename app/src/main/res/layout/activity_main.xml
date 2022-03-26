@@ -45,10 +45,12 @@
                 app:contentPadding="18dp">
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignParentTop="true"
                     android:text="@string/prof0"
+                    android:layout_marginLeft="15dp"
                     android:textAppearance="@android:style/TextAppearance.Material.Headline"
-                    android:gravity="center"/>
+                    android:background="#ffffff"/>
 
                 <TextView
                     android:id="@+id/desc0"
