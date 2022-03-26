@@ -21,6 +21,9 @@
     <string name="profdesc2">Makes battery life long-lasting.</string>
     <string name="profdesc3">Unlock max performance of devices </string>
     <string name="profdesc4">Join Support Group For Updates</string>
+    <string name="profdesc5">Device : devi</string>
+    <string name="profdesc6">Android Version : Andro</string>
+    <string name="profdesc7">Processor : soc</string>
 
     <!-- Profile Loader -->
     <string name="aboutLoader">Woah there!</string>
