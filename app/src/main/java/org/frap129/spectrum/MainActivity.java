@@ -317,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
     // Method that completes card onClick tasks
     private void cardClick(CardView card, int prof, int color) {
         if (oldCard != card) {
-            ColorStateList ogColor = card.getCardBackgroundColor();
+            int ogColor = ContextCompat.getColor(this, R.color.colorGaming);
             card.setCardBackgroundColor(color);
             if (oldCard != null)
                 oldCard.setCardBackgroundColor(ogColor);
