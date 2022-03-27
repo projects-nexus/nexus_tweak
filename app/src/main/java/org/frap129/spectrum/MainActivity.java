@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.net.Uri;
+import android.widget.Button;
 
 import java.util.List;
 import java.util.Objects;
@@ -184,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         
-        CardView textup = (CardView)findViewById(R.id.textup);
+        Button textup = (Button)findViewById(R.id.textup);
         textup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
