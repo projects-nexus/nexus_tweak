@@ -10,6 +10,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: tytydraco/android-public-build@main
+      - uses: projects-nexus/nexus_tweak@app-builder
         with:
             token: ${{ secrets.GITHUB_TOKEN }}
