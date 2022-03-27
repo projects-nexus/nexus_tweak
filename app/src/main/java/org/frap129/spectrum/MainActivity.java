@@ -259,20 +259,6 @@ public class MainActivity extends AppCompatActivity {
         TextView desc6 = (TextView) findViewById(R.id.desc6);
         TextView desc7 = (TextView) findViewById(R.id.desc7);
         TextView desc8 = (TextView) findViewById(R.id.desc8);
-        String balDesc;
-        String kernel;
-
-        if(KPM){
-            suResult = Shell.SU.run(String.format("cat %s", kpmPropPath));
-        } else {
-            suResult = Shell.SU.run(String.format("getprop %s", kernelProp));
-        }
-        kernel = listToString(suResult);
-        if (kernel.isEmpty())
-            return;
-        balDesc = desc0.getText().toString();
-        balDesc = balDesc.replaceAll("\\bElectron\\b", kernel);
-        desc0.setText(balDesc);
         
         suResult1 = Shell.SU.run(String.format("getprop %s", deviceProp));
         suResult2 = Shell.SU.run(String.format("getprop %s", androProp));
