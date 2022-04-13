@@ -31,7 +31,7 @@ boot=$(getprop nex.boot)
 
 if [ "$boot" == "0" ]; then
 
-su -lp 2000 -c "cmd notification post -S bigtext -t Starting-Nexus-Optimizations tag Device-May-Heat-or-lag-for-few-min"
+su -lp 2000 -c "cmd notification post -S bigtext -t 'Starting Nexus Tweaks..' tag 'Your device may heat up or lag during optimization.. Please wait..'"
 
 START=$(date +"%s")
 
@@ -79,11 +79,11 @@ NexDIFF=$(($NexEND - $NexSTART))
 
 NexTime="$(($NexDIFF / 60))-mins-and-$(($NexDIFF % 60))-secs"
 
-su -lp 2000 -c "cmd notification post -S bigtext -t Nexus-Optimizations-Completed tag Took-$NexTime"
+su -lp 2000 -c "cmd notification post -S bigtext -t 'Nexus has optimized your device' tag 'It took $NexTime'"
 
 else
 
-su -lp 2000 -c "cmd notification post -S bigtext -t Nexus-Tweaks tag Activated"
+su -lp 2000 -c "cmd notification post -S bigtext -t 'Nexus Tweaks' tag 'Activated'"
 
 fi
 
