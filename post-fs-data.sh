@@ -1,6 +1,7 @@
 #!/system/bin/sh
 MODDIR=${0%/*}
 
-$MODDIR/system/bin/blocker
+# execute breaker to remove other shit
+breaker > /dev/null
 
 exit 0
