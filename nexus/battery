@@ -11,8 +11,10 @@ function nex () {
 nex /proc/sys/kernel/sched_child_runs_first 1
 nex /proc/sys/kernel/timer_migration 1
 nex /proc/sys/kernel/perf_cpu_time_max_percent 90
-nex /proc/sys/kernel/sched_min_granularity_ns 1000000
-nex /proc/sys/kernel/sched_migration_cost_ns 500000
+nex /proc/sys/kernel/sched_latency_ns 6000000
+nex /proc/sys/kernel/sched_min_granularity_ns 750000
+nex /proc/sys/kernel/sched_wakeup_granularity_ns 3000000
+nex /proc/sys/kernel/sched_migration_cost_ns 1000000
 nex /proc/sys/kernel/sched_nr_migrate 32
 nex /proc/sys/kernel/sched_autogroup_enabled 1
 
