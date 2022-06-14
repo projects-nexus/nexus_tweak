@@ -47,6 +47,9 @@ nex /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 nex /sys/module/lowmemorykiller/parameters/debug_level 0
 nex /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
 
+# Msm Thermal
+nex /sys/module/msm_thermal/core_control/enabled 0
+
 # Disabled Exception-trace
 nex /proc/sys/debug/exception-trace 0
 
