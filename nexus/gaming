@@ -26,7 +26,7 @@ nex /proc/sys/fs/lease-break-time 5
 
 # VM
 nex /proc/sys/vm/stat_interval 1
-nex /proc/sys/vm/vfs_cache_pressure 75
+nex /proc/sys/vm/vfs_cache_pressure 20
 nex /proc/sys/vm/swappiness 100
 
 # Stuneboost
