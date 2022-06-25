@@ -7,8 +7,8 @@ nex.toast=0
 nex.profile=0
 
 # Spectrum
-spectrum.support=1
-persist.spectrum.profile=1
+nex.spectrum=1
+persist.nex.profile=0
 
 # Disable vsync
 debug.cpurend.vsync=false
