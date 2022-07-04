@@ -85,6 +85,6 @@ fi
 common > /dev/null
 
 # Where It All Begins
-nice -n -9 nAi
+nice -n -9 sh nex/nAi
 
 exit 0
