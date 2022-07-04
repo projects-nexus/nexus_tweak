@@ -35,10 +35,6 @@ su -lp 2000 -c "cmd notification post -S bigtext -t 'Starting Nexus Tweaks..' ta
 
 START=$(date +"%s")
 
-echo "- Starting Art Optimization" >> $nex_log
-
-echo "" >> $nex_log
-
 # ART optimizer
 su -c cmd package bg-dexopt-job
 
@@ -46,7 +42,8 @@ END=$(date +"%s")
 
 DIFF=$(($END - $START))
 
-echo "- Art Optimization took $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s)." >> $nex_log
+echo "- Art Optimization Executed Successfully!
+time took: $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s)." >> $nex_log
 
 echo "" >> $nex_log
 
@@ -56,10 +53,6 @@ if ! [ -d "$mmodule" ]; then
 
 START1=$(date +"%s")
 
-echo "- Starting DUS Optimization" >> $nex_log
-
-echo "" >> $nex_log
-
 # DUS optimizer
 dus
 
@@ -67,7 +60,8 @@ END1=$(date +"%s")
 
 DIFF1=$(($END1 - $START1))
 
-echo "- DUS Optimization took $(($DIFF1 / 60)) minute(s) and $(($DIFF1 % 60)) second(s)." >> $nex_log
+echo "- DUS Optimization Executed Successfully!
+Time took: $(($DIFF1 / 60)) minute(s) and $(($DIFF1 % 60)) second(s)." >> $nex_log
 
 echo "" >> $nex_log
 
