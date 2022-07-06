@@ -85,6 +85,6 @@ fi
 common > /dev/null
 
 # Where It All Begins
-nice -n -9 sh nex/nAi
+cd $MODDIR/nex && nice -n -9 ./nAi
 
 exit 0
