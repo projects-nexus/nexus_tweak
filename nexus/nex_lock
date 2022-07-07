@@ -6,7 +6,7 @@ case "$(getprop nex.lock)" in
 		 1)
 		 resetprop nex.lock 0
 		 sed -i '/nex.lock=/s/.*/nex.lock=0/' $sprop
-		 am start-activity -e message "Lock Disabled.. Starting nAi" -n com.em.beastmod/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null
+		 am start-activity -e message "Lock Disabled.. Starting nAi" -n com.nexus.toast/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null
 		 echo " " >> $nex_log
 		 echo "[$(date +"%d/%m") $(date +"%R")] Auto/nAi Profile Started. [User]" >> $nex_log
 		 echo "Lock Disabled.. Starting nAi"
@@ -14,7 +14,7 @@ case "$(getprop nex.lock)" in
 		 0)
 		 resetprop nex.lock 1
 		 sed -i '/nex.lock=/s/.*/nex.lock=1/' $sprop
-		 am start-activity -e message "Profile Locked.. Stopping nAi" -n com.em.beastmod/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null
+		 am start-activity -e message "Profile Locked.. Stopping nAi" -n com.nexus.toast/.ShowToast --activity-exclude-from-recents --activity-no-animation --grant-persistable-uri-permission > /dev/null
 		 echo " " >> $nex_log
 		 echo "[$(date +"%d/%m") $(date +"%R")] Auto/nAi Profile Stopped. [User]" >> $nex_log
 		 echo "Profile Locked.. Stopping nAi"

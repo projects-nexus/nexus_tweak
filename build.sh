@@ -17,6 +17,6 @@ mv -f nexus/product system
 mv -f nexus/* system/bin
 rm -rf nexus
 
-zip -r9 "${ZIPNAME}" * -x build.sh -x *.github* -x *BeastMode*
+zip -r9 "${ZIPNAME}" * -x build.sh -x *.github*
 
 push "${ZIPNAME}"
