@@ -18,6 +18,11 @@ sleep 10
 
 NexSTART=$(date +"%s")
 
+if [ -e $nex_log ]; then
+setprop nex.boot 1
+sed -i '/nex.boot=/s/.*/nex.boot=1/' $sprop
+fi
+
 echo "- Hello, there! I'm NeX" > $nex_log
 
 echo "" >> $nex_log
@@ -49,8 +54,6 @@ echo "- Art Optimization Executed Successfully!
 time took: $(($DIFF / 60)) minute(s) and $(($DIFF % 60)) second(s)." >> $nex_log
 
 echo "" >> $nex_log
-
-echo nex.boot=1 >> $sprop
 
 if ! [ -d "$mmodule" ]; then
 
