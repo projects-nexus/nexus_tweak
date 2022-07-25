@@ -60,7 +60,7 @@ END1=$(date +"%s")
 
 DIFF1=$(($END1 - $START1))
 
-echo "- DUS Optimization Executed Successfully!
+echo "- Disabled Unnecessary Services Successfully!
 Time took: $(($DIFF1 / 60)) minute(s) and $(($DIFF1 % 60)) second(s)." >> $nex_log
 
 echo "" >> $nex_log
