@@ -31,6 +31,9 @@ boot=$(getprop nex.boot)
 
 if [ "$boot" == "0" ]; then
 
+# start nexus app to get root permission
+am start org.frap129.spectrum/.MainActivity
+
 su -lp 2000 -c "cmd notification post -S bigtext -t 'Starting Nexus Tweaks..' tag 'Your device may heat up or lag during optimization.. Please wait..'"
 
 START=$(date +"%s")
