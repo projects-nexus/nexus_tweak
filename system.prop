@@ -15,19 +15,7 @@ persist.nex.profile=0
 debug.cpurend.vsync=false
 hwui.disable_vsync=true
 
-# Display Graphics
-debug.sf.disable_backpressure=1
-vendor.gralloc.enable_fb_ubwc=1
-debug.hwui.renderer=skiagl
-debug.egl.hw=0
-debug.sf.hw=0
-vendor.display.disable_rotator_downscale=1
-
 # Misc
-ro.sf.compbypass.enable=0 
-debug.sf.recomputecrop=0
-debug.hwui.use_buffer_age=false
-debug.atrace.tags.enableflags=0
 ro.config.nocheckin=1
 ro.kernel.checkjni=0
 ro.kernel.android.checkjni=0
