@@ -4,6 +4,7 @@ nex.dus=1
 nex.boot=0
 nex.lock=0
 nex.toast=0
+nex.kill3=0
 nex.profile=0
 
 # Spectrum

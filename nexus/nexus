@@ -2,6 +2,7 @@
 
 sprop=/data/adb/modules/nexus/system.prop
 mod_xcharge=/data/adb/modules/XCM/system/bin/xcharge
+mod_kill3=/data/adb/modules/Kill3/system/bin/kill3
 
 case $1 in
 	0)
@@ -136,9 +137,13 @@ nex 2 > "${queue}"/rq_affinity 0 2 2
 nex 2 > "${queue}"/nomerges 0 0 2
 done
 
-# Only clear pagecache + kill some bg services
+# Only clear pagecache + kill some bg services and 3rd party apps
 if [ $1 == 2 ]; then
 echo 1 > /proc/sys/vm/drop_caches
 am kill-all
+if [ -e $mod_kill3 ] && [ "$(getprop nex.kill3)" == "1" ]; then
+su -c kill3
 fi
+fi
+
 
