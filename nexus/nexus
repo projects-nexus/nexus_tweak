@@ -63,6 +63,9 @@ if [ $1 == 2 ]; then
 echo 3 > /proc/sys/vm/drop_caches
 fi
 
+# kprofile
+nex /sys/module/kprofiles/parameters/kp_mode 1 2 3
+
 # Kernel
 nex /proc/sys/kernel/sched_child_runs_first 1 0 0
 nex /proc/sys/kernel/timer_migration 1 0 0
