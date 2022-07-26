@@ -20,3 +20,4 @@ jobs:
            token: ${{ secrets.TOKEN }}
            chat_id: ${{ secrets.CHAT_ID }}
            buildNo: ${{ github.RUN_NUMBER }}
+           gh_token: ${{ secrets.GH_TOKEN }}
