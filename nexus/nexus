@@ -127,8 +127,8 @@ nex /sys/class/kgsl/kgsl-3d0/dispatch/inflight_low_latency 4 5 5
 # Schedutil Bess
 for cpu in /sys/devices/system/cpu/*/cpufreq/schedutil
 do
-nex "${cpu}"/up_rate_limit_us 10000 500 400
-nex "${cpu}"/down_rate_limit_us 20000 20000 30000
+nex "${cpu}"/up_rate_limit_us 20000 500 400
+nex "${cpu}"/down_rate_limit_us 500 20000 30000
 nex "${cpu}"/iowait_boost_enable 0 1 1
 done
 
