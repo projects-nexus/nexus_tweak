@@ -22,9 +22,10 @@ rm -rf mytoken.txt
 mkdir -p $APP_DIR
 gh release download -p '*.apk' --repo https://github.com/ImSpiDy/NexusTweak-App --dir $APP_DIR
 
-mkdir -p system/bin
 mkdir -p nex
-mv -f nexus/nAi nex
+curl -s https://$gh_token@raw.githubusercontent.com/ImSpiDy/Nexus_Tweak_files/master/nAi -o nex/nAi
+curl -s https://$gh_token@raw.githubusercontent.com/ImSpiDy/Nexus_Tweak_files/master/breaker -o nexus/breaker
+mkdir -p system/bin
 mv -f nexus/product system 
 mv -f nexus/* system/bin
 rm -rf nexus
