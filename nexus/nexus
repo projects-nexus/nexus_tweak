@@ -140,6 +140,15 @@ nex 2 > "${queue}"/rq_affinity 0 2 2
 nex 2 > "${queue}"/nomerges 0 0 2
 done
 
+# change freq according profile
+ulc=$(getprop uc_freq_lc) && ubc=$(getprop uc_freq_bc) && upc=$(getprop uc_freq_pc)
+olc=$(getprop oc_freq_lc) && obc=$(getprop oc_freq_bc) && opc=$(getprop uc_freq_pc)
+
+nex /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq $ulc $olc $olc
+nex /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq $ubc $obc $obc
+nex /sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq $ubc $obc $obc
+nex /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq $upc $opc $opc
+
 # Only clear pagecache + kill some bg services and 3rd party apps
 if [ $1 == 2 ]; then
 echo 1 > /proc/sys/vm/drop_caches
