@@ -2,7 +2,6 @@
 
 sprop=/data/adb/modules/nexus/system.prop
 mod_xcharge=/data/adb/modules/XCM/system/bin/xcharge
-mod_kill3=/data/adb/modules/Kill3/system/bin/kill3
 
 case $1 in
 	0)
@@ -153,8 +152,8 @@ nex /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq $upc $opc $opc
 if [ $1 == 2 ]; then
 echo 1 > /proc/sys/vm/drop_caches
 am kill-all
-if [ -e $mod_kill3 ] && [ "$(getprop nex.kill3)" == "1" ]; then
-su -c kill3
+if [ "$(getprop nex.kill3)" == "1" ]; then
+kill3
 fi
 fi
 

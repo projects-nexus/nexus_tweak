@@ -19,6 +19,7 @@ sleep 10
 NexSTART=$(date +"%s")
 
 if [ -e $nex_log ]; then
+kill3
 setprop nex.boot 1
 sed -i '/nex.boot=/s/.*/nex.boot=1/' $sprop
 fi

@@ -1,0 +1,21 @@
+#!/system/bin/sh
+
+ca=/data/adb/modules/nexus/c_app
+al=/storage/emulated/0/app_list.txt
+k3=/data/adb/modules/nexus/kill3.list
+
+boot=$(getprop nex.boot)
+
+if [ "$boot" == "0" ]; then
+
+pm list packages -3 | sed 's/package://' > $al
+
+else
+
+grep -vf $ca $al | sed 's/^/am force-stop /' > $k3
+
+. $k3
+
+rm -rf $k3
+
+fi
