@@ -1,0 +1,201 @@
+#!/system/bin/sh
+
+sprop=/data/adb/modules/nexus/system.prop
+
+function status () {
+	x=$(getprop nex.profile)
+	case "$x" in
+	 1)
+	 profile=BATTERY
+	 ;;
+	 2)
+	 profile=BALANCE
+	 ;;
+	 3)
+	 profile=GAMIMG
+	 ;;
+	 *)
+	 profile=AUTOMATIC
+	 ;;
+	 esac
+}
+status
+
+function ques2 () {
+
+echo " "
+if [[ $1 == 1 ]]; then
+ques3="Enter your choice (1,2,3)"
+echo " 1) Yes "
+echo " 2) Update List "
+echo " 3) Go Back "
+else
+ques3="Enter your choice (1, or 2)"
+echo " 1) Yes "
+echo " 2) Go Back "
+fi
+
+echo $ques3 & read z
+
+case "$z" in
+1)
+if [[ $mode == 1 ]]; then
+mode=0
+else
+mode=1
+fi
+modeis
+;;
+*)
+if [[ $1 == 1 ]] && [[ $z == 2 ]]; then
+setprop nex.boot 0
+kill3
+setprop nex.boot 1
+echo " Kill3 is Updated "
+sleep 5
+fi
+clear 
+sleep 0.2
+banner
+sleep 0.2
+choice
+sleep 0.2
+;;
+esac
+
+}
+function modeis () {
+	sleep 0.5
+	case "$mode" in
+	0)
+	mode_msg=Disabled
+	ques1=" Wanna Enable It ?"
+	;;
+	1)
+	mode_msg=Enabled
+	ques1=" Wanna Disable It ?"
+	;;
+	esac
+}
+
+ques="Enter your choice (1-4)"
+
+function banner () {
+cat << "BNR"
+
+××××××××××××××××××××××××××××××××××××××××××××××××××
+      _   __
+     / | / /__  _  ____  _______
+    /  |/ / _ \| |/_/ / / / ___/ 
+   / /|  /  __/>  </ /_/ (__  )
+  /_/ |_/\___/_/|_|\__,_/____/ 
+                 ______                    __  
+                /_  __/      _____  ____ _/ /__
+                 / / | | /| / / _ \/ __ `/ //_/
+                / /  | |/ |/ /  __/ /_/ / ,<   
+               /_/   |__/|__/\___/\__,_/_/|_|  
+                                                                
+××××××××××××××××××××××××××××××××××××××××××××××××××
+
+BNR
+}
+
+function choice () {
+
+echo " PROFILE : $profile "
+
+cat << "ETR"
+
+              × SELECT OPTION ×
+            .....................
+
+ 1) Toast | Get Notification when Mode changes
+
+ 2) DUS | Disable Useless/Unnecessary Services
+ 
+ 3) Kill3 | Kill Background apps on Game Mode
+ 
+ 4) Exit
+ 
+ETR
+
+echo $ques & read y
+
+echo " "
+echo " --------------"
+echo " "
+
+sleep 0.5
+
+case "$y" in
+	 1)
+	 mode=$(getprop nex.toast)
+	 modeis
+	 echo " 1) Toast is $mode_msg
+  $ques1"
+	 ques2
+	 setprop nex.toast $mode
+	 if [[ $mode == 1 ]]; then
+	 sed -i '/nex.toast=/s/.*/nex.toast=1/' $sprop
+	 else
+	 sed -i '/nex.toast=/s/.*/nex.toast=0/' $sprop
+	 fi
+	 echo " Toast is $mode_msg "
+	 ;;
+	 2)
+	 mode=$(getprop nex.dus)
+	 modeis
+	 echo " 2) Dus is $mode_msg
+  $ques1"
+	 ques2
+	 setprop nex.dus $mode
+	 if [[ $mode == 1 ]]; then
+	 sed -i '/nex.dus=/s/.*/nex.dus=1/' $sprop
+	 else
+	 sed -i '/nex.dus=/s/.*/nex.dus=1/' $sprop
+	 fi
+	 dus
+	 echo " DUS is $mode_msg "
+	 ;;
+	 3)
+	 mode=$(getprop nex.kill3)
+	 modeis
+	 echo " 3) Kill3 is $mode_msg
+  $ques1"
+	 ques2 1
+	 setprop nex.kill3 $mode
+	 if [[ $mode == 1 ]]; then
+	 sed -i '/nex.kill3=/s/.*/nex.kill3=1/' $sprop
+	 else
+	 sed -i '/nex.kill3=/s/.*/nex.kill3=0/' $sprop
+	 fi
+	 echo " Kill3 is $mode_msg "
+	 ;;
+	 4)
+	 exit 1
+	 ;;
+	 *)
+	 clear
+	 banner
+	 ques="Only Enter Number from 1 to 4"
+	 choice
+	 return
+	 ;;
+esac
+
+sleep 5
+clear
+sleep 0.2
+banner
+sleep 0.2
+choice
+sleep 0.2
+
+}
+
+clear 
+sleep 0.2
+banner
+sleep 0.2
+choice
+sleep 0.2
