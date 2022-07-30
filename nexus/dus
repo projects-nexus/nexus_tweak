@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-if [ "$(getprop nex.dus)" == "1" ]; then
+if [ "$(getprop nex.dus)" == "0" ]; then
 status=enable
 else
 status=disable
