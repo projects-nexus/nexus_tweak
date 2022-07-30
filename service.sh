@@ -24,11 +24,7 @@ setprop nex.boot 1
 sed -i '/nex.boot=/s/.*/nex.boot=1/' $sprop
 fi
 
-echo "- Hello, there! I'm NeX" > $nex_log
-
-echo "" >> $nex_log
-
-echo "- I am here to optimize your $(getprop ro.build.product)" >> $nex_log
+echo "- Starting Nexus Tweaks" > $nex_log
 
 echo "" >> $nex_log
 
