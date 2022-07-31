@@ -28,7 +28,8 @@ if [[ $1 == 1 ]]; then
 ques3="Enter your choice (1,2,3)"
 echo " 1) Yes "
 echo " 2) Update List "
-echo " 3) Go Back "
+echo " 3) Ignore app "
+echo " 4) Go Back "
 else
 ques3="Enter your choice (1, or 2)"
 echo " 1) Yes "
@@ -53,6 +54,12 @@ kill3
 setprop nex.boot 1
 echo " Kill3 is Updated "
 sleep 5
+fi
+if [[ $1 == 1 ]] && [[ $z == 3 ]]; then
+echo " To ignore any app from getting killed 
+ add # in front pkg name or remove it
+ from app_list.txt in internal storage"
+sleep 7
 fi
 clear 
 sleep 0.2
