@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ZIPNAME=Nexus-Tweak-x1-stable.zip
+ZIPNAME=Nexus-Tweak-x1.${buildNo}-beta.zip
 APP_DIR=nexus/product/app/NexusTweak
 
 function push() {
