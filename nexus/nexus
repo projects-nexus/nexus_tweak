@@ -135,7 +135,6 @@ done
 for queue in /sys/block/*/queue
 do
 nex "${queue}"/nr_requests 128 32 64
-nex 2 > "${queue}"/rq_affinity 0 2 2
 nex 2 > "${queue}"/nomerges 0 0 2
 done
 

@@ -100,5 +100,6 @@ echo 128 > "${queue}"/read_ahead_kb
 echo 0 > "${queue}"/add_random
 echo 0 > "${queue}"/iostats
 echo 0 > "${queue}"/rotational
+echo 2 > "${queue}"/rq_affinity
 done
 
