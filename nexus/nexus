@@ -135,7 +135,7 @@ done
 for queue in /sys/block/*/queue
 do
 nex "${queue}"/nr_requests 128 32 64
-nex 2 > "${queue}"/nomerges 0 0 2
+nex "${queue}"/nomerges 0 1 2
 done
 
 # change freq according profile
